@@ -1,0 +1,63 @@
+# ---------------------------
+# Rails
+# ---------------------------
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+/public/assets
+/public/packs
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+yarn.lock
+npm-debug.log*
+
+# ---------------------------
+# Database
+# ---------------------------
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/db/*.sqlite3-*
+/storage/*
+/coverage/
+/spec/reports
+
+# ---------------------------
+# Credentials / Secrets
+# ---------------------------
+/config/master.key
+/config/credentials/*.key
+.env
+.env.*
+!.env.example
+
+# ---------------------------
+# Redis / Sidekiq
+# ---------------------------
+/redis/*.rdb
+/sidekiq.log
+
+# ---------------------------
+# OS Files
+# ---------------------------
+.DS_Store
+Thumbs.db
+
+# ---------------------------
+# Editor
+# ---------------------------
+.vscode/
+.idea/
+
+# ---------------------------
+# Bundler
+# ---------------------------
+.bundle
+/vendor/bundle
+
+# ---------------------------
+# Byebug / Debugging
+# ---------------------------
+.byebug_history
