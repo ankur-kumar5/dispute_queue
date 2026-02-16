@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include Pundit::Authorization
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
+  around_action :set_time_zone
 
   # Changes to the importmap will invalidate the etag for HTML responses
   stale_when_importmap_changes
@@ -16,4 +17,9 @@ class ApplicationController < ActionController::Base
   def pundit_user
     Current.user
   end
+
+  def set_time_zone(&block)
+    Time.use_zone(Current.user&.time_zone || "UTC", &block)
+  end
 end
+

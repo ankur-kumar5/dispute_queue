@@ -1,0 +1,26 @@
+<div class="auth-wrapper">
+  <h1>Sign up</h1>
+
+  <%= form_with model: @user, data: { turbo: false } do |form| %>
+
+    <div>
+      <%= form.label :email_address %>
+      <%= form.email_field :email_address %>
+    </div>
+
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
+
+    <div>
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation %>
+    </div>
+
+    <div>
+      <%= form.submit "Create Account" %>
+    </div>
+
+  <% end %>
+</div>
