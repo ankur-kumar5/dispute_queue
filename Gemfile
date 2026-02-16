@@ -17,6 +17,16 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# For Background processing
+gem 'sidekiq', '~> 8.1'
+# Redis client for Sidekiq and caching
+gem 'redis', '~> 5.4', '>= 5.4.1'
+# AASM is a continuation of the acts-as-state-machine
+gem 'aasm', '~> 5.5', '>= 5.5.2'
+# For authorization
+gem 'pundit', '~> 2.5', '>= 2.5.2'
+# Hash algorithm for handling passwords
+gem 'bcrypt', '~> 3.1', '>= 3.1.21'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
