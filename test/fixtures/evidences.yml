@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dispute: one
+  kind: MyString
+  metadata: 
+
+two:
+  dispute: two
+  kind: MyString
+  metadata: 

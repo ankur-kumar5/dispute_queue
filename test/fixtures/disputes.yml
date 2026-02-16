@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  charge: one
+  external_id: MyString
+  status: MyString
+  opened_at: 2026-02-16 12:37:34
+  closed_at: 2026-02-16 12:37:34
+  amount_cents: 1
+  currency: MyString
+  external_payload: 
+
+two:
+  charge: two
+  external_id: MyString
+  status: MyString
+  opened_at: 2026-02-16 12:37:34
+  closed_at: 2026-02-16 12:37:34
+  amount_cents: 1
+  currency: MyString
+  external_payload: 
