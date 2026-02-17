@@ -8,3 +8,145 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* ===== Auth Pages Styling (Rails 8 Built-in) ===== */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center container */
+.auth-wrapper {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+.auth-wrapper h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Form groups */
+.auth-wrapper div {
+  margin-bottom: 18px;
+}
+
+/* Labels */
+.auth-wrapper label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Inputs */
+.auth-wrapper input[type="email"],
+.auth-wrapper input[type="password"],
+.auth-wrapper input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  font-size: 14px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.auth-wrapper input:focus {
+  border-color: #0969da;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+}
+
+/* Submit button */
+.auth-wrapper input[type="submit"],
+.auth-wrapper button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #0969da;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.auth-wrapper input[type="submit"]:hover,
+.auth-wrapper button:hover {
+  background-color: #0550ae;
+}
+
+/* Flash messages */
+.flash {
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.flash.notice {
+  background-color: #dafbe1;
+  color: #1a7f37;
+}
+
+.flash.alert {
+  background-color: #ffebe9;
+  color: #cf222e;
+}
+
+/* Links */
+.auth-wrapper a {
+  color: #0969da;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.auth-wrapper a:hover {
+  text-decoration: underline;
+}
+
+
+.page-wrapper {
+  padding: 40px;
+}
+
+.page-header {
+  margin-bottom: 20px;
+}
+
+.disputes-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.disputes-table th,
+.disputes-table td {
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  text-align: left;
+}
+
+.disputes-table th {
+  background: #f3f4f6;
+}
+
+.empty-state {
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 6px;
+}
