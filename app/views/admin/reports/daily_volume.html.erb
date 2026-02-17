@@ -1,0 +1,20 @@
+<h1>Daily Dispute Volume</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Count</th>
+      <th>Total Amount (USD)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |row| %>
+      <tr>
+        <td><%= row.day %></td>
+        <td><%= row.dispute_count %></td>
+        <td><%= number_to_currency(row.total_cents.to_i / 100.0) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

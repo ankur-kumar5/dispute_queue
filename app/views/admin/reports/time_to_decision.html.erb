@@ -1,0 +1,20 @@
+<h1>Time To Decision (Weekly)</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>P50 (seconds)</th>
+      <th>P90 (seconds)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |row| %>
+      <tr>
+        <td><%= row.week.to_date %></td>
+        <td><%= row.p50.to_i %></td>
+        <td><%= row.p90.to_i %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
