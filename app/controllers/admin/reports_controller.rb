@@ -2,22 +2,17 @@ class Admin::ReportsController < Admin::BaseController
   def daily_volume
     authorize :report, :daily_volume?
 
-    from = parse_date(params[:from])
-    to   = parse_date(params[:to])
+    @from = parse_date(params[:from]) || 30.days.ago.to_date
+    @to   = parse_date(params[:to])   || Date.current
 
     @results = Dispute
-      .where(opened_at: from.beginning_of_day..to.end_of_day)
+      .where(opened_at: @from.beginning_of_day..@to.end_of_day)
       .group("DATE(opened_at)")
       .select(
         "DATE(opened_at) as day,
-         COUNT(*) as dispute_count,
-         SUM(amount_cents) as total_cents"
+          COUNT(*) as dispute_count,
+          SUM(amount_cents) as total_cents"
       )
-
-    respond_to do |format|
-    format.html
-    format.json { render json: @results }
-    end
   end
 
   def time_to_decision
@@ -35,7 +30,9 @@ class Admin::ReportsController < Admin::BaseController
 
   private
 
-  def parse_date(date_param)
-    Time.zone.parse(date_param.to_s)
+  def parse_date(value)
+    Date.parse(value) if value.present?
+  rescue ArgumentError
+    nil
   end
 end

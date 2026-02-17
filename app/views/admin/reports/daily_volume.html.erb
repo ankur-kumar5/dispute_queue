@@ -1,6 +1,19 @@
 <h1>Daily Dispute Volume</h1>
 
-<table>
+<%= form_with url: admin_reports_daily_volume_path, method: :get, local: true do %>
+  <div style="margin-bottom: 15px;" class="report-filter">
+    <label>From:</label>
+    <%= date_field_tag :from, @from %>
+
+    <label style="margin-left: 10px;">To:</label>
+    <%= date_field_tag :to, @to %>
+
+    <%= submit_tag "Filter" %>
+    <%= link_to "Reset", admin_reports_daily_volume_path, class: "reset-button" %>
+  </div>
+<% end %>
+
+<table class="admin-table">
   <thead>
     <tr>
       <th>Date</th>

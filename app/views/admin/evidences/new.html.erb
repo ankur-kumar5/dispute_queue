@@ -1,0 +1,43 @@
+<div class="admin-card">
+  <h2>Add Evidence</h2>
+
+  <%= form_with model: [:admin, @dispute, @evidence], local: true do |f| %>
+
+    <div class="form-group">
+      <%= f.label :kind %>
+      <%= f.select :kind,
+          ["receipt", "customer_communication", "shipping_proof"],
+          {}, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :note %>
+      <%= f.text_area :note,
+            rows: 5,
+            class: "form-control",
+            placeholder: "Enter notes about the evidence..." %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :file_path %>
+      <%= f.text_field :file_path,
+            class: "form-control",
+            placeholder: "Enter file path for evidence..." %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Submit Evidence", class: "btn-primary" %>
+      <%= link_to "Cancel",
+            admin_dispute_path(@dispute),
+            class: "btn-secondary" %>
+    </div>
+
+  <% end %>
+  <hr/>
+  <h2>Audit Trail</h2>
+  <ul>
+    <% @case_actions.each do |case_action| %>
+      <li><%= case_action.created_at %> -: <%= case_action.action %> (<%= case_action.note %>)</li>
+    <% end %>
+  </ul>
+</div>

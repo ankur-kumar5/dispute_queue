@@ -11,6 +11,7 @@
           <th>ID</th>
           <th>Status</th>
           <th>Created At</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -19,6 +20,7 @@
             <td><%= dispute.id %></td>
             <td><%= dispute.status %></td>
             <td><%= dispute.created_at.strftime("%d %b %Y") %></td>
+            <td><%= link_to "View", admin_dispute_path(dispute), class: "btn-view" %></td>
           </tr>
         <% end %>
       </tbody>

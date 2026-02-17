@@ -1,20 +1,28 @@
-<h3>Add Evidence</h3>
+<hr>
 
-<%= form_with url: admin_dispute_evidences_path(@dispute), method: :post do %>
-  <div>
-    <label>Kind</label>
-    <%= text_field_tag :kind %>
-  </div>
-
-  <div>
-    <label>Note</label>
-    <%= text_area_tag :note %>
-  </div>
-
-  <div>
-    <label>File Path (optional)</label>
-    <%= text_field_tag :file_path %>
-  </div>
-
-  <%= submit_tag "Attach Evidence" %>
+<h3>Evidence</h3>
+<% if Current.user.admin? || Current.user.reviewer? %>
+    <%= link_to "Add Evidence", new_admin_dispute_evidence_path(@dispute) %>
+<% end %>
+<% if @dispute.evidences.any? %>
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>Kind</th>
+        <th>Metadata</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @dispute.evidences.each do |evidence| %>
+        <tr>
+          <td><%= evidence.kind %></td>
+          <td><%= evidence.metadata %></td>
+          <td><%= evidence.created_at.strftime("%d %b %Y") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No evidence submitted yet.</p>
 <% end %>
