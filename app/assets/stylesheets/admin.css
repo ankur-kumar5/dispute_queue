@@ -149,3 +149,22 @@
 .btn-secondary:hover {
   background-color: #d1d5db;
 }
+
+.btn-danger {
+  background-color: #dc2626;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+.decision-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}

@@ -4,6 +4,19 @@
 <% if Current.user.admin? || Current.user.reviewer? %>
     <%= link_to "Add Evidence", new_admin_dispute_evidence_path(@dispute) %>
 <% end %>
+<% if @dispute.status == "awaiting_decision" %>
+  <div class="decision-buttons">
+    <%= button_to "Mark Won",
+          decide_won_admin_dispute_path(@dispute, decision: "won"),
+          method: :patch,
+          class: "btn-primary" %>
+
+    <%= button_to "Mark Lost",
+          decide_lost_admin_dispute_path(@dispute, decision: "lost"),
+          method: :patch,
+          class: "btn-danger" %>
+  </div>
+<% end %>
 <% if @dispute.evidences.any? %>
   <table class="admin-table">
     <thead>

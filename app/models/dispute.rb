@@ -35,4 +35,16 @@ class Dispute < ApplicationRecord
       transitions from: [:won, :lost], to: :open
     end
   end
+
+  def mark_awaiting_decision!
+    update!(status: "awaiting_decision")
+  end
+
+  def decide_won!
+    update!(status: "won", closed_at: Time.current)
+  end
+
+  def decide_lost!
+    update!(status: "lost", closed_at: Time.current)
+  end
 end
