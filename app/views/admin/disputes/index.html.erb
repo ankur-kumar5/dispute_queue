@@ -1,0 +1,31 @@
+<div class="page-wrapper">
+  <div class="page-header">
+    <h1>Disputes</h1>
+    <p>Welcome, <%= Current.user.email_address %></p>
+  </div>
+
+  <% if @disputes.present? %>
+    <table class="disputes-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Status</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @disputes.each do |dispute| %>
+          <tr>
+            <td><%= dispute.id %></td>
+            <td><%= dispute.status %></td>
+            <td><%= dispute.created_at.strftime("%d %b %Y") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="empty-state">
+      <p>No disputes found.</p>
+    </div>
+  <% end %>
+</div>
