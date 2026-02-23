@@ -71,5 +71,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   # BDD for Ruby
-  gem 'rspec-rails', '~> 8.0.0'
+  gem 'rspec-rails', '~> 8.0.3'
 end
